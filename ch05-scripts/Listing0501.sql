@@ -1,0 +1,9 @@
+USE [master];
+CREATE SERVER AUDIT [AuditSpecification]
+TO FILE 
+(	FILEPATH = N'e:\audits\'
+	,MAXSIZE = 50 MB
+	,MAX_FILES = 4
+	,RESERVE_DISK_SPACE = OFF
+) WITH (QUEUE_DELAY = 1000, ON_FAILURE = CONTINUE);
+ALTER SERVER AUDIT [AuditSpecification] WITH (STATE = ON);

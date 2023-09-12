@@ -1,0 +1,9 @@
+USE [master];
+CREATE SERVER AUDIT [AuditSpecification]
+TO FILE 
+(	FILEPATH = N'D:\rdsdbdata\SQLAudit\'
+	,MAXSIZE = 10 MB
+	,MAX_ROLLOVER_FILES = 2147483647
+	,RESERVE_DISK_SPACE = OFF
+) WITH (QUEUE_DELAY = 1000, ON_FAILURE = CONTINUE)
+WHERE ([database_name]<>'rdsadmin');

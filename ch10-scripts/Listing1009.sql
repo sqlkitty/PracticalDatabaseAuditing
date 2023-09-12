@@ -1,0 +1,10 @@
+CREATE TABLE dbo.AuditChangesTemporal
+(
+      AuditID INT NOT NULL PRIMARY KEY CLUSTERED IDENTITY(1,1),
+	[event_time] [datetime2](7) NOT NULL,
+	[statement] [nvarchar](4000) NULL,
+   	ValidFrom DATETIME2 GENERATED ALWAYS AS ROW START NOT NULL,
+  	ValidTo DATETIME2 GENERATED ALWAYS AS ROW END NOT NULL,
+  	PERIOD FOR SYSTEM_TIME (ValidFrom, ValidTo)
+)
+WITH (SYSTEM_VERSIONING = ON (HISTORY_TABLE = dbo.AuditChangesTemporalHistory));

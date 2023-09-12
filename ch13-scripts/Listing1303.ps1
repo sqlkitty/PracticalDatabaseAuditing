@@ -1,0 +1,1 @@
+Get-AzSqlServerAudit -ResourceGroupName 'yourresourcegroup' -Servername 'yourservername'

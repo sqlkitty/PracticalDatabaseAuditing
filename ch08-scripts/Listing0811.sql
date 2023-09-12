@@ -1,0 +1,1 @@
+DROP EVENT SESSION [audit_sa] ON SERVER;

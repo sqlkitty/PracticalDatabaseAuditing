@@ -1,0 +1,2 @@
+Msg 33222, Level 16, State 1, Line 7
+Audit 'AuditSpecification3' failed to start. For more information, see the SQL Server error log.

@@ -1,0 +1,1 @@
+EXEC msdb.dbo.sysmail_help_account_sp;

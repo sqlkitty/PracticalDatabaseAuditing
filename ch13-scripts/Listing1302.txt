@@ -1,0 +1,15 @@
+AzureDiagnostics
+| where Category == 'SQLSecurityAuditEvents'
+   and TimeGenerated > ago(1d) 
+   and server_principal_name_s == 'josephine'
+| project
+    event_time_t,
+    database_name_s,
+    statement_s,
+    server_principal_name_s,
+    succeeded_s,
+    client_ip_s,
+    application_name_s,
+    additional_information_s,
+    data_sensitivity_information_s
+| order by event_time_t desc
